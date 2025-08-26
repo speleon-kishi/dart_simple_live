@@ -1,4 +1,4 @@
-name: app-build-action-dev
+name: app-build-ipa
 
 on:
   workflow_dispatch:
@@ -7,6 +7,13 @@ on:
       - 'dev'
 
 jobs:
+  build-mac-ios-android:
+    runs-on: macos-latest
+
+    permissions:
+      contents: write
+      
+    steps: 
       #打包iOS
       - name: Build IPA
         run: |
